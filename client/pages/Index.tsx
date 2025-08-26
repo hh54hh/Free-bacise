@@ -1,4 +1,17 @@
+import { allArticles, getArticlesByCategory } from "../data/articles";
+
 export default function Index() {
+  // Get recent articles from each category
+  const recentProgramming = getArticlesByCategory("programming").slice(0, 3);
+  const recentAI = getArticlesByCategory("ai").slice(0, 3);
+  const recentSecurity = getArticlesByCategory("security").slice(0, 3);
+  const recentMobile = getArticlesByCategory("mobile").slice(0, 3);
+
+  // Get all recent articles sorted by date
+  const allRecentArticles = allArticles
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 8);
+
   return (
     <div style={{ 
       direction: 'rtl', 
@@ -148,7 +161,7 @@ export default function Index() {
             margin: '0 auto',
             marginBottom: '25px'
           }}>
-            اكتشف أحدث الأخبار والتطورات في عالم التكنولوجيا والبرمجة. من الذكاء الاصطناعي إلى الأمن السيبراني، نقدم لك كل ما تحتاجه لتبقى في الم��دمة.
+            اكتشف أكثر من {allArticles.length} مقال تقني متخصص في أحدث التطورات والأخبار في عالم التكنولوجيا والبرمجة.
           </p>
           <div style={{
             display: 'flex',
@@ -190,91 +203,90 @@ export default function Index() {
         </section>
 
         {/* Featured Article */}
-        <article style={{ 
-          backgroundColor: 'white',
-          marginBottom: '35px', 
-          padding: '35px',
-          borderRadius: '15px',
-          boxShadow: '0 6px 25px rgba(0,0,0,0.1)',
-          border: '2px solid #667eea'
-        }}>
-          <div style={{
-            backgroundColor: '#667eea',
-            color: 'white',
-            padding: '8px 16px',
-            borderRadius: '20px',
-            fontSize: '12px',
-            fontWeight: '600',
-            display: 'inline-block',
-            marginBottom: '15px'
+        {allRecentArticles.length > 0 && (
+          <article style={{ 
+            backgroundColor: 'white',
+            marginBottom: '35px', 
+            padding: '35px',
+            borderRadius: '15px',
+            boxShadow: '0 6px 25px rgba(0,0,0,0.1)',
+            border: '2px solid #667eea'
           }}>
-            🔥 مقال مميز
-          </div>
-          <h2 style={{ 
-            fontSize: '28px', 
-            fontWeight: '700', 
-            margin: '0 0 15px 0', 
-            lineHeight: '1.3',
-            color: '#1a365d'
-          }}>
-            الذكاء الاصطناعي في عام 2025: ثورة تقنية جديدة تغير العالم
-          </h2>
-          <div style={{ 
-            fontSize: '13px', 
-            color: '#718096', 
-            marginBottom: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '15px',
-            flexWrap: 'wrap'
-          }}>
-            <span style={{
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '15px',
-              fontSize: '12px',
-              fontWeight: '500'
-            }}>
-              📅 15 يناير 2025
-            </span>
-            <span style={{
-              backgroundColor: '#f0fff4',
-              color: '#38a169',
-              padding: '6px 12px',
-              borderRadius: '15px',
-              fontSize: '12px',
-              fontWeight: '500'
-            }}>
-              🤖 ذكاء اصطناعي
-            </span>
-            <span style={{
-              backgroundColor: '#fff5f5',
-              color: '#e53e3e',
-              padding: '6px 12px',
-              borderRadius: '15px',
-              fontSize: '12px',
-              fontWeight: '500'
-            }}>
-              🔥 ترندينغ
-            </span>
-          </div>
-          <p style={{ 
-            fontSize: '19px', 
-            lineHeight: '1.8', 
-            margin: '0 0 20px 0',
-            color: '#2d3748'
-          }}>
-            يشهد عام 2025 تطورات مذهلة ومتسارعة في مجال الذكاء الاصطناعي، حيث تستمر النماذج اللغوية الكبيرة في التطور بوتيرة سريعة وتصبح أكثر دقة وفعالية في فهم السياق والتفاعل الطبيعي مع البشر.
-          </p>
-          <p style={{ 
-            fontSize: '17px', 
-            lineHeight: '1.7', 
-            margin: 0,
-            color: '#4a5568'
-          }}>
-            الشركات التقنية الكبرى تركز بشكل متزايد على تطوير ذكاء اصطناعي أكثر أماناً وشفافية، مع التركيز على الاستخدام الأخلاقي للتكنولوجيا وحماية خصوصية المستخدمين في عصر البيانات الضخمة.
-          </p>
-        </article>
+            <a href={`/article/${allRecentArticles[0].id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div style={{
+                backgroundColor: '#667eea',
+                color: 'white',
+                padding: '8px 16px',
+                borderRadius: '20px',
+                fontSize: '12px',
+                fontWeight: '600',
+                display: 'inline-block',
+                marginBottom: '15px'
+              }}>
+                🔥 مقال مميز
+              </div>
+              <h2 style={{ 
+                fontSize: '28px', 
+                fontWeight: '700', 
+                margin: '0 0 15px 0', 
+                lineHeight: '1.3',
+                color: '#1a365d'
+              }}>
+                {allRecentArticles[0].title}
+              </h2>
+              <div style={{ 
+                fontSize: '13px', 
+                color: '#718096', 
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '15px',
+                flexWrap: 'wrap'
+              }}>
+                <span style={{
+                  backgroundColor: '#f7fafc',
+                  padding: '6px 12px',
+                  borderRadius: '15px',
+                  fontSize: '12px',
+                  fontWeight: '500'
+                }}>
+                  📅 {new Date(allRecentArticles[0].date).toLocaleDateString('ar-SA')}
+                </span>
+                <span style={{
+                  backgroundColor: '#f0fff4',
+                  color: '#38a169',
+                  padding: '6px 12px',
+                  borderRadius: '15px',
+                  fontSize: '12px',
+                  fontWeight: '500'
+                }}>
+                  {allRecentArticles[0].category === 'programming' ? '💻 البرمجة' :
+                   allRecentArticles[0].category === 'ai' ? '🤖 ذكاء اصطناعي' :
+                   allRecentArticles[0].category === 'security' ? '🔐 أمن سيبراني' :
+                   '📱 تطبيقات الهاتف'}
+                </span>
+                <span style={{
+                  backgroundColor: '#fff5f5',
+                  color: '#e53e3e',
+                  padding: '6px 12px',
+                  borderRadius: '15px',
+                  fontSize: '12px',
+                  fontWeight: '500'
+                }}>
+                  ⏱️ {allRecentArticles[0].readTime}
+                </span>
+              </div>
+              <p style={{ 
+                fontSize: '19px', 
+                lineHeight: '1.8', 
+                margin: 0,
+                color: '#2d3748'
+              }}>
+                {allRecentArticles[0].excerpt}
+              </p>
+            </a>
+          </article>
+        )}
 
         {/* Quick Links to Sections */}
         <section style={{
@@ -319,10 +331,18 @@ export default function Index() {
               <p style={{
                 fontSize: '15px',
                 lineHeight: '1.6',
-                margin: 0,
+                margin: '0 0 15px 0',
                 color: '#4a5568',
                 textAlign: 'center'
               }}>أحدث لغات البرمجة، الأطر والمكتبات، وأفضل الممارسات في التطوير</p>
+              <div style={{
+                textAlign: 'center',
+                fontSize: '14px',
+                color: '#667eea',
+                fontWeight: '500'
+              }}>
+                {getArticlesByCategory("programming").length} مقال متاح
+              </div>
             </a>
 
             <a href="/ai" style={{
@@ -338,7 +358,7 @@ export default function Index() {
                 fontSize: '32px',
                 marginBottom: '15px',
                 textAlign: 'center'
-              }}>��</div>
+              }}>🤖</div>
               <h4 style={{
                 fontSize: '20px',
                 fontWeight: '600',
@@ -349,10 +369,18 @@ export default function Index() {
               <p style={{
                 fontSize: '15px',
                 lineHeight: '1.6',
-                margin: 0,
+                margin: '0 0 15px 0',
                 color: '#4a5568',
                 textAlign: 'center'
-              }}>آخر التطورات في الذكاء الاصطناعي، التعلم الآلي، والشبكات العصبية</p>
+              }}>آخر التطورات في ا��ذكاء الاصطناعي، التعلم الآلي، والشبكات العصبية</p>
+              <div style={{
+                textAlign: 'center',
+                fontSize: '14px',
+                color: '#48bb78',
+                fontWeight: '500'
+              }}>
+                {getArticlesByCategory("ai").length} مقال متاح
+              </div>
             </a>
 
             <a href="/security" style={{
@@ -379,10 +407,18 @@ export default function Index() {
               <p style={{
                 fontSize: '15px',
                 lineHeight: '1.6',
-                margin: 0,
+                margin: '0 0 15px 0',
                 color: '#4a5568',
                 textAlign: 'center'
               }}>حماية البيانات، التهديدات الأمنية، وأفضل ممارسات الأمان الرقمي</p>
+              <div style={{
+                textAlign: 'center',
+                fontSize: '14px',
+                color: '#ed8936',
+                fontWeight: '500'
+              }}>
+                {getArticlesByCategory("security").length} مقال متاح
+              </div>
             </a>
 
             <a href="/mobile" style={{
@@ -409,10 +445,18 @@ export default function Index() {
               <p style={{
                 fontSize: '15px',
                 lineHeight: '1.6',
-                margin: 0,
+                margin: '0 0 15px 0',
                 color: '#4a5568',
                 textAlign: 'center'
               }}>تطوير التطبيقات المحمولة، منصات التطوير، وتصميم واجهات المستخدم</p>
+              <div style={{
+                textAlign: 'center',
+                fontSize: '14px',
+                color: '#9f7aea',
+                fontWeight: '500'
+              }}>
+                {getArticlesByCategory("mobile").length} مقال متاح
+              </div>
             </a>
           </div>
         </section>
@@ -432,149 +476,84 @@ export default function Index() {
           </h3>
           <div style={{ display: 'grid', gap: '25px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
             
-            <article style={{ 
-              backgroundColor: 'white',
-              padding: '25px',
-              borderRadius: '12px',
-              boxShadow: '0 3px 15px rgba(0,0,0,0.08)',
-              border: '1px solid #e8eaed'
-            }}>
-              <h4 style={{ 
-                fontSize: '18px', 
-                fontWeight: '600', 
-                margin: '0 0 12px 0',
-                color: '#2d3748'
-              }}>
-                React 19: الميزات الجديدة والتحسينات المنتظرة
-              </h4>
-              <div style={{ 
-                fontSize: '12px', 
-                color: '#718096', 
-                marginBottom: '15px',
-                backgroundColor: '#f0f8ff',
-                padding: '4px 10px',
+            {allRecentArticles.slice(1, 7).map((article, index) => (
+              <article key={article.id} style={{ 
+                backgroundColor: 'white',
+                padding: '25px',
                 borderRadius: '12px',
-                display: 'inline-block'
+                boxShadow: '0 3px 15px rgba(0,0,0,0.08)',
+                border: '1px solid #e8eaed'
               }}>
-                💻 البرمجة • 10 يناير 2025
-              </div>
-              <p style={{ 
-                fontSize: '15px', 
-                lineHeight: '1.6', 
-                margin: 0,
-                color: '#4a5568'
-              }}>
-                React 19 يقدم ميزات جديدة مثل Server Components المحسنة والـ Concurrent Features...
-              </p>
-            </article>
-
-            <article style={{ 
-              backgroundColor: 'white',
-              padding: '25px',
-              borderRadius: '12px',
-              boxShadow: '0 3px 15px rgba(0,0,0,0.08)',
-              border: '1px solid #e8eaed'
-            }}>
-              <h4 style={{ 
-                fontSize: '18px', 
-                fontWeight: '600', 
-                margin: '0 0 12px 0',
-                color: '#2d3748'
-              }}>
-                ChatGPT-5: الجيل الجديد من الذكاء الاصطناعي
-              </h4>
-              <div style={{ 
-                fontSize: '12px', 
-                color: '#718096', 
-                marginBottom: '15px',
-                backgroundColor: '#f0fff4',
-                padding: '4px 10px',
-                borderRadius: '12px',
-                display: 'inline-block'
-              }}>
-                🤖 ذكاء اصطناعي • 12 يناير 2025
-              </div>
-              <p style={{ 
-                fontSize: '15px', 
-                lineHeight: '1.6', 
-                margin: 0,
-                color: '#4a5568'
-              }}>
-                OpenAI تكشف عن ChatGPT-5 مع قدرات محسنة بشكل كبير في فهم السياق...
-              </p>
-            </article>
-
-            <article style={{ 
-              backgroundColor: 'white',
-              padding: '25px',
-              borderRadius: '12px',
-              boxShadow: '0 3px 15px rgba(0,0,0,0.08)',
-              border: '1px solid #e8eaed'
-            }}>
-              <h4 style={{ 
-                fontSize: '18px', 
-                fontWeight: '600', 
-                margin: '0 0 12px 0',
-                color: '#2d3748'
-              }}>
-                هجمات الفدية الإلكترونية: التهديدات الجديدة
-              </h4>
-              <div style={{ 
-                fontSize: '12px', 
-                color: '#718096', 
-                marginBottom: '15px',
-                backgroundColor: '#fffaf0',
-                padding: '4px 10px',
-                borderRadius: '12px',
-                display: 'inline-block'
-              }}>
-                🔐 أمن سيبراني • 14 يناير 2025
-              </div>
-              <p style={{ 
-                fontSize: '15px', 
-                lineHeight: '1.6', 
-                margin: 0,
-                color: '#4a5568'
-              }}>
-                تطور جديد في هجمات الفدية الإلكترونية يستهدف الشركات الصغيرة والمتوسطة...
-              </p>
-            </article>
-
-            <article style={{ 
-              backgroundColor: 'white',
-              padding: '25px',
-              borderRadius: '12px',
-              boxShadow: '0 3px 15px rgba(0,0,0,0.08)',
-              border: '1px solid #e8eaed'
-            }}>
-              <h4 style={{ 
-                fontSize: '18px', 
-                fontWeight: '600', 
-                margin: '0 0 12px 0',
-                color: '#2d3748'
-              }}>
-                Flutter 3.16: تطوير التطبيقات عبر المنصات
-              </h4>
-              <div style={{ 
-                fontSize: '12px', 
-                color: '#718096', 
-                marginBottom: '15px',
-                backgroundColor: '#faf5ff',
-                padding: '4px 10px',
-                borderRadius: '12px',
-                display: 'inline-block'
-              }}>
-                📱 تطبيقات الهاتف • 13 يناير 2025
-              </div>
-              <p style={{ 
-                fontSize: '15px', 
-                lineHeight: '1.6', 
-                margin: 0,
-                color: '#4a5568'
-              }}>
-                Google تطلق Flutter 3.16 مع تحسينات كبيرة في الأداء ودعم أفضل للـ Material Design...
-              </p>
-            </article>
+                <a href={`/article/${article.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <h4 style={{ 
+                    fontSize: '18px', 
+                    fontWeight: '600', 
+                    margin: '0 0 12px 0',
+                    color: '#2d3748',
+                    lineHeight: '1.4'
+                  }}>
+                    {article.title}
+                  </h4>
+                  <div style={{ 
+                    fontSize: '12px', 
+                    color: '#718096', 
+                    marginBottom: '15px',
+                    display: 'flex',
+                    gap: '10px',
+                    flexWrap: 'wrap'
+                  }}>
+                    <span style={{
+                      backgroundColor: article.category === 'programming' ? '#f0f8ff' :
+                                       article.category === 'ai' ? '#f0fff4' :
+                                       article.category === 'security' ? '#fffaf0' : '#faf5ff',
+                      color: article.category === 'programming' ? '#667eea' :
+                             article.category === 'ai' ? '#48bb78' :
+                             article.category === 'security' ? '#ed8936' : '#9f7aea',
+                      padding: '4px 10px',
+                      borderRadius: '12px',
+                      fontSize: '12px'
+                    }}>
+                      {article.category === 'programming' ? '💻 البرمجة' :
+                       article.category === 'ai' ? '🤖 ذكاء اصطناعي' :
+                       article.category === 'security' ? '🔐 أمن سيبراني' :
+                       '📱 تطبيقات الهاتف'} • {new Date(article.date).toLocaleDateString('ar-SA')}
+                    </span>
+                  </div>
+                  <p style={{ 
+                    fontSize: '15px', 
+                    lineHeight: '1.6', 
+                    margin: '0 0 15px 0',
+                    color: '#4a5568'
+                  }}>
+                    {article.excerpt.substring(0, 120)}...
+                  </p>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                  }}>
+                    <span style={{
+                      fontSize: '12px',
+                      color: '#718096',
+                      backgroundColor: '#f7fafc',
+                      padding: '4px 8px',
+                      borderRadius: '10px'
+                    }}>
+                      ⏱️ {article.readTime}
+                    </span>
+                    <span style={{
+                      color: article.category === 'programming' ? '#667eea' :
+                             article.category === 'ai' ? '#48bb78' :
+                             article.category === 'security' ? '#ed8936' : '#9f7aea',
+                      fontSize: '14px',
+                      fontWeight: '500'
+                    }}>
+                      اقرأ المزيد ←
+                    </span>
+                  </div>
+                </a>
+              </article>
+            ))}
 
           </div>
         </section>
@@ -609,7 +588,7 @@ export default function Index() {
                 fontWeight: '800',
                 color: '#667eea',
                 marginBottom: '8px'
-              }}>150+</div>
+              }}>{allArticles.length}+</div>
               <div style={{
                 fontSize: '14px',
                 color: '#4a5568'
@@ -621,7 +600,7 @@ export default function Index() {
                 fontWeight: '800',
                 color: '#48bb78',
                 marginBottom: '8px'
-              }}>12</div>
+              }}>4</div>
               <div style={{
                 fontSize: '14px',
                 color: '#4a5568'
@@ -654,6 +633,45 @@ export default function Index() {
           </div>
         </section>
 
+        {/* Free Basics Compliance */}
+        <section style={{
+          backgroundColor: '#f0f8ff',
+          padding: '30px',
+          borderRadius: '12px',
+          border: '2px solid #667eea',
+          marginBottom: '40px',
+          textAlign: 'center'
+        }}>
+          <h3 style={{
+            fontSize: '22px',
+            fontWeight: '700',
+            margin: '0 0 15px 0',
+            color: '#1a365d'
+          }}>
+            متوافق 100% مع Free Basics
+          </h3>
+          <p style={{
+            fontSize: '16px',
+            lineHeight: '1.6',
+            margin: '0 0 20px 0',
+            color: '#4a5568'
+          }}>
+            موقعنا مُحسَّن خصيصاً ليلبي جميع متطلبات Facebook Free Basics للحصول على القبول الكامل
+          </p>
+          <a href="/free-basics-requirements" style={{
+            backgroundColor: '#667eea',
+            color: 'white',
+            padding: '12px 24px',
+            textDecoration: 'none',
+            borderRadius: '20px',
+            fontSize: '14px',
+            fontWeight: '500',
+            boxShadow: '0 4px 15px rgba(102,126,234,0.3)'
+          }}>
+            اطلع على متطلبات القبول
+          </a>
+        </section>
+
       </main>
 
       {/* Footer */}
@@ -683,7 +701,7 @@ export default function Index() {
             marginLeft: 'auto',
             marginRight: 'auto'
           }}>
-            مصدرك الموثوق لأحدث أخبار التكنولوجيا والتطوير باللغة العربية
+            مصدرك الموثوق لأحدث أخبار التكنولوجيا والتطوير باللغة العربية مع أكثر من {allArticles.length} مقال متخصص
           </p>
           <div style={{ 
             fontSize: '15px', 
@@ -708,6 +726,14 @@ export default function Index() {
               borderBottom: '2px solid transparent'
             }}>
               سياسة الخصوصية
+            </a>
+            <a href="/free-basics-requirements" style={{ 
+              color: '#e2e8f0', 
+              textDecoration: 'none',
+              padding: '8px 0',
+              borderBottom: '2px solid transparent'
+            }}>
+              متطلبات Free Basics
             </a>
             <a href="mailto:info@tech2025.com" style={{ 
               color: '#e2e8f0', 
