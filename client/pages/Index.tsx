@@ -679,10 +679,10 @@ export default function Index() {
                         article.category === "programming"
                           ? "https://images.pexels.com/photos/12200696/pexels-photo-12200696.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
                           : article.category === "ai"
-                          ? "https://images.pexels.com/photos/25626428/pexels-photo-25626428.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
-                          : article.category === "security"
-                          ? "https://images.pexels.com/photos/3958681/pexels-photo-3958681.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
-                          : "https://images.pexels.com/photos/8833420/pexels-photo-8833420.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                            ? "https://images.pexels.com/photos/25626428/pexels-photo-25626428.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                            : article.category === "security"
+                              ? "https://images.pexels.com/photos/3958681/pexels-photo-3958681.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                              : "https://images.pexels.com/photos/8833420/pexels-photo-8833420.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
                       })`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
@@ -938,7 +938,6 @@ export default function Index() {
             </div>
           </div>
         </section>
-
       </main>
 
       {/* Footer */}
