@@ -42,9 +42,14 @@ const NotFound = () => {
 
       {/* Footer */}
       <footer style={{ backgroundColor: '#f5f5f5', borderTop: '1px solid #ddd', padding: '20px 10px', textAlign: 'center', position: 'absolute', bottom: 0, width: '100%' }}>
-        <p style={{ margin: '0 0 5px 0', fontSize: '14px' }}>
-          © 2025 تكنولوجيا 2025 - أخبار الت��وير والتكنولوجيا
+        <p style={{ margin: '0 0 10px 0', fontSize: '14px' }}>
+          © 2025 تكنولوجيا 2025 - أخبار التطوير والتكنولوجيا
         </p>
+        <div style={{ fontSize: '12px', marginBottom: '10px' }}>
+          <a href="/about" style={{ color: '#666', margin: '0 10px', textDecoration: 'underline' }}>من نحن</a>
+          <a href="/privacy" style={{ color: '#666', margin: '0 10px', textDecoration: 'underline' }}>سياسة الخصوصية</a>
+          <a href="mailto:info@tech2025.com" style={{ color: '#666', margin: '0 10px', textDecoration: 'underline' }}>اتصل بنا</a>
+        </div>
         <p style={{ margin: 0, fontSize: '12px', color: '#888' }}>
           متوافق مع Free Basics • سريع وخفيف
         </p>
