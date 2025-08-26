@@ -1,4 +1,8 @@
+import { getArticlesByCategory } from "../data/articles";
+
 export default function AI() {
+  const articles = getArticlesByCategory("ai");
+
   return (
     <div style={{ 
       direction: 'rtl', 
@@ -60,7 +64,7 @@ export default function AI() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            الرئيسية
+            🏠 الرئيسية
           </a>
           <a href="/programming" style={{ 
             padding: '8px 16px', 
@@ -71,7 +75,7 @@ export default function AI() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            البرمجة
+            💻 البرمجة
           </a>
           <a href="/ai" style={{ 
             padding: '8px 16px', 
@@ -82,7 +86,7 @@ export default function AI() {
             fontSize: '14px',
             fontWeight: '500'
           }}>
-            الذكاء الاصطناعي
+            🤖 الذكاء الاصطناعي
           </a>
           <a href="/security" style={{ 
             padding: '8px 16px', 
@@ -93,7 +97,18 @@ export default function AI() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            الأمن السيبراني
+            🔐 الأمن السيبراني
+          </a>
+          <a href="/mobile" style={{ 
+            padding: '8px 16px', 
+            backgroundColor: '#f7fafc', 
+            color: '#4a5568',
+            textDecoration: 'none',
+            borderRadius: '20px',
+            fontSize: '14px',
+            border: '1px solid #e2e8f0'
+          }}>
+            📱 تطبيقات الهاتف
           </a>
         </div>
       </nav>
@@ -108,280 +123,114 @@ export default function AI() {
         <h2 style={{
           fontSize: '28px',
           fontWeight: '700',
-          margin: '0 0 30px 0',
+          margin: '0 0 10px 0',
           color: '#1a365d',
           textAlign: 'center',
           borderBottom: '3px solid #48bb78',
           paddingBottom: '15px'
         }}>
-          أحدث أخبار الذكاء الاصطناعي
+          مقالات الذكاء الاصطناعي
         </h2>
 
-        {/* Featured Article */}
-        <article style={{ 
-          backgroundColor: 'white',
-          padding: '30px',
-          borderRadius: '12px',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-          border: '2px solid #48bb78',
+        <p style={{
+          textAlign: 'center',
+          fontSize: '16px',
+          color: '#4a5568',
           marginBottom: '30px'
         }}>
-          <h3 style={{ 
-            fontSize: '24px', 
-            fontWeight: '700', 
-            margin: '0 0 15px 0',
-            color: '#1a365d'
-          }}>
-            ChatGPT-5: الجيل الجديد من الذكاء الاصطناعي التحادثي
-          </h3>
-          <div style={{ 
-            fontSize: '12px', 
-            color: '#718096', 
-            marginBottom: '20px',
-            backgroundColor: '#f0fff4',
-            padding: '8px 15px',
-            borderRadius: '8px',
-            display: 'inline-block'
-          }}>
-            15 يناير 2025 • مقال مميز
-          </div>
-          <p style={{ 
-            fontSize: '18px', 
-            lineHeight: '1.7', 
-            margin: '0 0 20px 0',
-            color: '#2d3748'
-          }}>
-            OpenAI تكشف عن ChatGPT-5 مع قدرات محسنة بشكل كبير في فهم السياق، التفكير المنطقي، والتعامل مع المهام المعقدة. النموذج الجديد يحمل تحسينات جذرية في الأمان والدقة.
-          </p>
-          <p style={{ 
-            fontSize: '16px', 
-            lineHeight: '1.6', 
-            margin: 0,
-            color: '#4a5568'
-          }}>
-            الميزات الجديدة تشمل قدرة أفضل على حل المشاكل الرياضية المعقدة، فهم أعمق للصور والفيديو، وتحسين كبير في اللغات غير الإنجليزية بما فيها العربية.
-          </p>
-        </article>
+          {articles.length} مقال متاح في هذا القسم
+        </p>
 
-        {/* Articles */}
-        <div style={{ display: 'grid', gap: '25px' }}>
-          
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
+        {/* Articles Grid */}
+        <div style={{ display: 'grid', gap: '20px' }}>
+          {articles.map((article, index) => (
+            <article key={article.id} style={{ 
+              backgroundColor: 'white',
+              padding: '25px',
+              borderRadius: '10px',
+              boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
+              border: '1px solid #e8eaed'
             }}>
-              Google Gemini Ultra: منافس قوي في عالم الذكاء الاصطناعي
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              12 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              Google تطلق Gemini Ultra مع قدرات متقدمة في معالجة النصوص والصور والبرمجة. النموذج يتفوق في مهام البحث والتحليل المعقد.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              الذكاء الاصطناعي في الطب: ثورة في التشخيص والعلاج
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              10 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              أحدث التطورات في استخدام الذكاء الاصطناعي للتشخيص المبكر للأمراض، تطوير الأدوية، وتحسين رعاية المرضى في المستشفيات.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              Meta AI: الذكاء الاصطناعي في وسائل التواصل الاجتماعي
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              8 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              Meta تدمج الذكاء الاصطناعي في Facebook وInstagram وWhatsApp لتحسين تجربة المستخدم وتقديم محتوى أكثر تخصيصاً وأماناً.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              الأخلاقيات في الذكاء الاصطناعي: التحديات والحلول
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              6 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              مناقشة شاملة حول التحديات الأخلاقية للذكاء الاصطناعي، الخصوصية، التحيز في الخوارزميات، والحاجة لقوانين منظمة.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              الذكاء الاصطناعي في التعليم: مستقبل التعلم الشخصي
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              4 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              كيف يثور الذكاء الاصطناعي في قطاع التعليم من خلال التعلم التكيفي، المساعدين الافتراضيين، وتخصيص المناهج لكل طالب.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              مستقبل الوظائف في عصر الذكاء الاصطناعي
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              2 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              تحليل شامل لتأثير الذكاء الاصطناعي على سوق العمل، الوظائف المهددة، الوظائف الجديدة، والمهارات المطلوبة للمستقبل.
-            </p>
-          </article>
-
+              <a href={`/article/${article.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <h3 style={{ 
+                  fontSize: '20px', 
+                  fontWeight: '600', 
+                  margin: '0 0 12px 0',
+                  color: '#2d3748',
+                  lineHeight: '1.4'
+                }}>
+                  {article.title}
+                </h3>
+                <div style={{ 
+                  fontSize: '12px', 
+                  color: '#718096', 
+                  marginBottom: '15px',
+                  display: 'flex',
+                  gap: '15px',
+                  flexWrap: 'wrap'
+                }}>
+                  <span style={{
+                    backgroundColor: '#f0fff4',
+                    padding: '4px 10px',
+                    borderRadius: '12px',
+                    fontSize: '12px'
+                  }}>
+                    📅 {new Date(article.date).toLocaleDateString('ar-SA')}
+                  </span>
+                  <span style={{
+                    backgroundColor: '#f0fff4',
+                    padding: '4px 10px',
+                    borderRadius: '12px',
+                    fontSize: '12px'
+                  }}>
+                    ⏱️ {article.readTime}
+                  </span>
+                </div>
+                <p style={{ 
+                  fontSize: '15px', 
+                  lineHeight: '1.6', 
+                  margin: '0 0 15px 0',
+                  color: '#4a5568'
+                }}>
+                  {article.excerpt}
+                </p>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    gap: '8px',
+                    flexWrap: 'wrap'
+                  }}>
+                    {article.tags.slice(0, 3).map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        style={{
+                          backgroundColor: '#e6ffee',
+                          color: '#48bb78',
+                          padding: '4px 8px',
+                          borderRadius: '10px',
+                          fontSize: '12px',
+                          fontWeight: '500'
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span style={{
+                    color: '#48bb78',
+                    fontSize: '14px',
+                    fontWeight: '500'
+                  }}>
+                    اقرأ المزيد ←
+                  </span>
+                </div>
+              </a>
+            </article>
+          ))}
         </div>
 
         {/* AI Tools Section */}
