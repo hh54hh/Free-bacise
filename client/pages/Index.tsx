@@ -34,16 +34,42 @@ export default function Index() {
           boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
         }}
       >
-        <h1
+        <div
           style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "12px",
             margin: "0 0 8px 0",
-            fontSize: "32px",
-            fontWeight: "800",
-            textShadow: "0 2px 4px rgba(0,0,0,0.3)",
           }}
         >
-          تكنولوجيا 2025
-        </h1>
+          <span
+            style={{
+              fontSize: "28px",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+            }}
+          >
+            🚀
+          </span>
+          <h1
+            style={{
+              margin: "0",
+              fontSize: "32px",
+              fontWeight: "800",
+              textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+            }}
+          >
+            تكنولوجيا 2025
+          </h1>
+          <span
+            style={{
+              fontSize: "28px",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+            }}
+          >
+            💻
+          </span>
+        </div>
         <p
           style={{
             margin: 0,
@@ -227,7 +253,7 @@ export default function Index() {
                 fontWeight: "500",
               }}
             >
-              📱 متوافق مع Free Basics
+              📱 تطبيق سريع وموثوق
             </span>
             <span
               style={{
@@ -370,7 +396,7 @@ export default function Index() {
               textAlign: "center",
             }}
           >
-            استكشف أقسامنا المتخصصة
+            استكشف أقسامنا المتخ��صة
           </h3>
           <div
             style={{
@@ -476,7 +502,7 @@ export default function Index() {
                   textAlign: "center",
                 }}
               >
-                آخر التطورات في ا��ذكاء الاصطناعي، التعلم الآلي، والشبكات
+                آخر ��لتطورات في ا��ذكاء الاصطناعي، التعلم الآلي، والشبكات
                 العصبية
               </p>
               <div
@@ -642,6 +668,27 @@ export default function Index() {
                   href={`/article/${article.id}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "120px",
+                      marginBottom: "15px",
+                      borderRadius: "8px",
+                      overflow: "hidden",
+                      backgroundImage: `url(${
+                        article.category === "programming"
+                          ? "https://images.pexels.com/photos/12200696/pexels-photo-12200696.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                          : article.category === "ai"
+                            ? "https://images.pexels.com/photos/25626428/pexels-photo-25626428.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                            : article.category === "security"
+                              ? "https://images.pexels.com/photos/3958681/pexels-photo-3958681.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                              : "https://images.pexels.com/photos/8833420/pexels-photo-8833420.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                      })`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      filter: "brightness(0.8)",
+                    }}
+                  />
                   <h4
                     style={{
                       fontSize: "18px",
@@ -722,7 +769,7 @@ export default function Index() {
                         borderRadius: "10px",
                       }}
                     >
-                      ⏱️ {article.readTime}
+                      ���️ {article.readTime}
                     </span>
                     <span
                       style={{
@@ -780,6 +827,14 @@ export default function Index() {
             <div>
               <div
                 style={{
+                  fontSize: "24px",
+                  marginBottom: "8px",
+                }}
+              >
+                📚
+              </div>
+              <div
+                style={{
                   fontSize: "32px",
                   fontWeight: "800",
                   color: "#667eea",
@@ -798,6 +853,14 @@ export default function Index() {
               </div>
             </div>
             <div>
+              <div
+                style={{
+                  fontSize: "24px",
+                  marginBottom: "8px",
+                }}
+              >
+                🗂️
+              </div>
               <div
                 style={{
                   fontSize: "32px",
@@ -820,6 +883,14 @@ export default function Index() {
             <div>
               <div
                 style={{
+                  fontSize: "24px",
+                  marginBottom: "8px",
+                }}
+              >
+                📅
+              </div>
+              <div
+                style={{
                   fontSize: "32px",
                   fontWeight: "800",
                   color: "#ed8936",
@@ -834,10 +905,18 @@ export default function Index() {
                   color: "#4a5568",
                 }}
               >
-                تحديث أسبوعي
+                تحديث أسبوع��
               </div>
             </div>
             <div>
+              <div
+                style={{
+                  fontSize: "24px",
+                  marginBottom: "8px",
+                }}
+              >
+                🌐
+              </div>
               <div
                 style={{
                   fontSize: "32px",
@@ -858,55 +937,6 @@ export default function Index() {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Free Basics Compliance */}
-        <section
-          style={{
-            backgroundColor: "#f0f8ff",
-            padding: "30px",
-            borderRadius: "12px",
-            border: "2px solid #667eea",
-            marginBottom: "40px",
-            textAlign: "center",
-          }}
-        >
-          <h3
-            style={{
-              fontSize: "22px",
-              fontWeight: "700",
-              margin: "0 0 15px 0",
-              color: "#1a365d",
-            }}
-          >
-            متوافق 100% مع Free Basics
-          </h3>
-          <p
-            style={{
-              fontSize: "16px",
-              lineHeight: "1.6",
-              margin: "0 0 20px 0",
-              color: "#4a5568",
-            }}
-          >
-            موقعنا مُحسَّن خصيصاً ليلبي جميع متطلبات Facebook Free Basics للحصول
-            على القبول الكامل
-          </p>
-          <a
-            href="/free-basics-requirements"
-            style={{
-              backgroundColor: "#667eea",
-              color: "white",
-              padding: "12px 24px",
-              textDecoration: "none",
-              borderRadius: "20px",
-              fontSize: "14px",
-              fontWeight: "500",
-              boxShadow: "0 4px 15px rgba(102,126,234,0.3)",
-            }}
-          >
-            اطلع على متطلبات القبول
-          </a>
         </section>
       </main>
 
@@ -978,7 +1008,7 @@ export default function Index() {
                 borderBottom: "2px solid transparent",
               }}
             >
-              سياسة الخصوصية
+              ��ياسة الخصوصية
             </a>
             <a
               href="/free-basics-requirements"
@@ -1015,7 +1045,7 @@ export default function Index() {
               © 2025 تكنولوجيا 2025 - جميع الحقوق محفوظة
             </p>
             <p style={{ margin: 0, fontSize: "13px" }}>
-              🚀 متوافق مع Free Basics • ⚡ سريع وخفيف • 🌐 محتوى عربي أصيل
+              🚀 موقع تقني متطور • ⚡ سريع وخفيف ��� 🌐 محتوى عربي أصيل
             </p>
           </div>
         </div>

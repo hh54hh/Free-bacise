@@ -171,7 +171,7 @@ export default function AI() {
             marginBottom: "30px",
           }}
         >
-          {articles.length} مقال متاح في هذا القسم
+          {articles.length} مقال مت��ح في هذا القسم
         </p>
 
         {/* Articles Grid */}
@@ -469,7 +469,7 @@ export default function AI() {
             opacity: "0.8",
           }}
         >
-          متوافق مع Free Basics • سريع وخفيف
+          موقع تقني متطور • سريع وخفيف
         </p>
       </footer>
     </div>
