@@ -668,6 +668,27 @@ export default function Index() {
                   href={`/article/${article.id}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "120px",
+                      marginBottom: "15px",
+                      borderRadius: "8px",
+                      overflow: "hidden",
+                      backgroundImage: `url(${
+                        article.category === "programming"
+                          ? "https://images.pexels.com/photos/12200696/pexels-photo-12200696.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                          : article.category === "ai"
+                          ? "https://images.pexels.com/photos/25626428/pexels-photo-25626428.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                          : article.category === "security"
+                          ? "https://images.pexels.com/photos/3958681/pexels-photo-3958681.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                          : "https://images.pexels.com/photos/8833420/pexels-photo-8833420.jpeg?auto=compress&cs=tinysrgb&w=300&h=120&fit=crop"
+                      })`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      filter: "brightness(0.8)",
+                    }}
+                  />
                   <h4
                     style={{
                       fontSize: "18px",
@@ -748,7 +769,7 @@ export default function Index() {
                         borderRadius: "10px",
                       }}
                     >
-                      ⏱️ {article.readTime}
+                      ���️ {article.readTime}
                     </span>
                     <span
                       style={{
