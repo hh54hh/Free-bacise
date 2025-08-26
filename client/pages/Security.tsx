@@ -400,7 +400,7 @@ export default function Security() {
                   color: "#c05621",
                 }}
               >
-                لا تنقر على روابط من مصادر غير موثوقة
+                لا تنقر على روابط من مصادر غي�� موثوقة
               </p>
             </div>
 
@@ -528,7 +528,7 @@ export default function Security() {
             opacity: "0.8",
           }}
         >
-          متوافق مع Free Basics • سريع وخفيف
+          موقع تقني متطور • سريع وخفيف
         </p>
       </footer>
     </div>

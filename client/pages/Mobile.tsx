@@ -651,7 +651,7 @@ export default function Mobile() {
               textDecoration: "none",
             }}
           >
-            اتصل بنا
+            اتص�� بنا
           </a>
         </div>
         <p
@@ -661,7 +661,7 @@ export default function Mobile() {
             opacity: "0.8",
           }}
         >
-          متوافق مع Free Basics • سريع وخفيف
+          موقع تقني متطور • سريع وخفيف
         </p>
       </footer>
     </div>
