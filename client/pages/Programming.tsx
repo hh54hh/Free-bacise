@@ -1,4 +1,8 @@
+import { getArticlesByCategory } from "../data/articles";
+
 export default function Programming() {
+  const articles = getArticlesByCategory("programming");
+
   return (
     <div style={{ 
       direction: 'rtl', 
@@ -60,7 +64,7 @@ export default function Programming() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            الرئيسية
+            🏠 الرئيسية
           </a>
           <a href="/programming" style={{ 
             padding: '8px 16px', 
@@ -71,7 +75,7 @@ export default function Programming() {
             fontSize: '14px',
             fontWeight: '500'
           }}>
-            البرمجة
+            💻 البرمجة
           </a>
           <a href="/ai" style={{ 
             padding: '8px 16px', 
@@ -82,7 +86,7 @@ export default function Programming() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            الذكاء الاصطناعي
+            🤖 الذكاء الاصطناعي
           </a>
           <a href="/security" style={{ 
             padding: '8px 16px', 
@@ -93,7 +97,18 @@ export default function Programming() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            الأمن السيبراني
+            🔐 الأمن السيبراني
+          </a>
+          <a href="/mobile" style={{ 
+            padding: '8px 16px', 
+            backgroundColor: '#f7fafc', 
+            color: '#4a5568',
+            textDecoration: 'none',
+            borderRadius: '20px',
+            fontSize: '14px',
+            border: '1px solid #e2e8f0'
+          }}>
+            📱 تطبيقات الهاتف
           </a>
         </div>
       </nav>
@@ -108,339 +123,152 @@ export default function Programming() {
         <h2 style={{
           fontSize: '28px',
           fontWeight: '700',
-          margin: '0 0 30px 0',
+          margin: '0 0 10px 0',
           color: '#1a365d',
           textAlign: 'center',
           borderBottom: '3px solid #667eea',
           paddingBottom: '15px'
         }}>
-          أحدث مقالات البرمجة والتطوير
+          مقالات البرمجة والتطوير
         </h2>
 
-        {/* Articles */}
-        <div style={{ display: 'grid', gap: '25px' }}>
-          
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '22px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              React 19: الميزات الجديدة والتحسينات المنتظرة
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              10 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: '0 0 15px 0',
-              color: '#4a5568'
-            }}>
-              React 19 يجلب تحسينات كبيرة في الأداء مع Server Components المحسنة، Concurrent Features الجديدة، والتحكم الأفضل في إدارة الحالة. تعرف على أهم الميزات الجديدة.
-            </p>
-            <p style={{ 
-              fontSize: '15px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#718096'
-            }}>
-              تشمل التحديثات أيضاً تحسينات في TypeScript support، وأدوات تطوير محسنة، وميزات جديدة لتحسين تجربة المطور.
-            </p>
-          </article>
+        <p style={{
+          textAlign: 'center',
+          fontSize: '16px',
+          color: '#4a5568',
+          marginBottom: '30px'
+        }}>
+          {articles.length} مقال متاح في هذا القسم
+        </p>
 
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '22px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
+        {/* Articles Grid */}
+        <div style={{ display: 'grid', gap: '20px' }}>
+          {articles.map((article, index) => (
+            <article key={article.id} style={{ 
+              backgroundColor: 'white',
+              padding: '25px',
+              borderRadius: '10px',
+              boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
+              border: '1px solid #e8eaed'
             }}>
-              Python 3.13: الجديد في عالم البايثون
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              8 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: '0 0 15px 0',
-              color: '#4a5568'
-            }}>
-              إصدار Python 3.13 يحمل تحسينات في الأداء، ميزات جديدة في التعامل مع البيانات، وأدوات محسنة للتطوير. اكتشف ما الجديد.
-            </p>
-            <p style={{ 
-              fontSize: '15px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#718096'
-            }}>
-              التحسينات تشمل سرعة أكبر في معالجة البيانات، دعم أفضل للـ async programming، وميزات جديدة في المكتبات الأساسية.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '22px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              TypeScript 5.4: أحدث ميزات لغة البرمجة المحبوبة
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              6 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: '0 0 15px 0',
-              color: '#4a5568'
-            }}>
-              TypeScript 5.4 يقدم تحسينات في النوع checking، أدوات محسنة للتطوير، ودعم أفضل للمشاريع الكبيرة والمعقدة.
-            </p>
-            <p style={{ 
-              fontSize: '15px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#718096'
-            }}>
-              الميزات الجديدة تساعد المطورين في كتابة كود أكثر أماناً وفعالية مع تحسين تجربة التطوير بشكل عام.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '22px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              Next.js 15: إطار العمل الأسرع للويب
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              4 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: '0 0 15px 0',
-              color: '#4a5568'
-            }}>
-              Next.js 15 يحمل تحسينات جذرية في الأداء، App Router محسن، وميزات جديدة تجعل تطوير تطبيقات الويب أسرع وأسهل.
-            </p>
-            <p style={{ 
-              fontSize: '15px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#718096'
-            }}>
-              التحديثات تشمل تحسين Image optimization، Server actions محسنة، ودعم أفضل للـ edge runtime.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '22px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              Vue.js 3.4: التطوير السريع ��لواجهات التفاعلية
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              2 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: '0 0 15px 0',
-              color: '#4a5568'
-            }}>
-              Vue.js 3.4 يقدم composition API محسن، reactivity أقوى، وأدوات تطوير محسنة لبناء تطبيقات ويب حديثة ومتجاوبة.
-            </p>
-            <p style={{ 
-              fontSize: '15px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#718096'
-            }}>
-              التحسينات تركز على الأداء، سهولة التعلم، والمرونة في بناء تطبيقات من صغيرة إلى معقدة جداً.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '22px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              أفضل ممارسات الـ Clean Code في 2025
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              30 ديسمبر 2024
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: '0 0 15px 0',
-              color: '#4a5568'
-            }}>
-              تعلم أحدث ممارسات كتابة الكود النظيف والقابل للصيانة. من التسمية السليمة إلى البنية المثلى للمشاريع البرمجية.
-            </p>
-            <p style={{ 
-              fontSize: '15px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#718096'
-            }}>
-              نصائح عملية للمطورين لكتابة كود أفضل، تحسين الأداء، وتسهيل التطوير المستقبلي للمشاريع.
-            </p>
-          </article>
-
+              <a href={`/article/${article.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <h3 style={{ 
+                  fontSize: '20px', 
+                  fontWeight: '600', 
+                  margin: '0 0 12px 0',
+                  color: '#2d3748',
+                  lineHeight: '1.4'
+                }}>
+                  {article.title}
+                </h3>
+                <div style={{ 
+                  fontSize: '12px', 
+                  color: '#718096', 
+                  marginBottom: '15px',
+                  display: 'flex',
+                  gap: '15px',
+                  flexWrap: 'wrap'
+                }}>
+                  <span style={{
+                    backgroundColor: '#f0f8ff',
+                    padding: '4px 10px',
+                    borderRadius: '12px',
+                    fontSize: '12px'
+                  }}>
+                    📅 {new Date(article.date).toLocaleDateString('ar-SA')}
+                  </span>
+                  <span style={{
+                    backgroundColor: '#f0f8ff',
+                    padding: '4px 10px',
+                    borderRadius: '12px',
+                    fontSize: '12px'
+                  }}>
+                    ⏱️ {article.readTime}
+                  </span>
+                </div>
+                <p style={{ 
+                  fontSize: '15px', 
+                  lineHeight: '1.6', 
+                  margin: '0 0 15px 0',
+                  color: '#4a5568'
+                }}>
+                  {article.excerpt}
+                </p>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    gap: '8px',
+                    flexWrap: 'wrap'
+                  }}>
+                    {article.tags.slice(0, 3).map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        style={{
+                          backgroundColor: '#e6f3ff',
+                          color: '#667eea',
+                          padding: '4px 8px',
+                          borderRadius: '10px',
+                          fontSize: '12px',
+                          fontWeight: '500'
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span style={{
+                    color: '#667eea',
+                    fontSize: '14px',
+                    fontWeight: '500'
+                  }}>
+                    اقرأ المزيد ←
+                  </span>
+                </div>
+              </a>
+            </article>
+          ))}
         </div>
 
-        {/* Related Topics */}
-        <section style={{ 
-          marginTop: '50px', 
-          paddingTop: '30px', 
-          borderTop: '2px solid #e2e8f0'
+        {/* Load More Section */}
+        <div style={{
+          textAlign: 'center',
+          marginTop: '40px',
+          padding: '30px',
+          backgroundColor: 'white',
+          borderRadius: '12px',
+          border: '1px solid #e8eaed'
         }}>
-          <h3 style={{ 
-            fontSize: '24px', 
-            fontWeight: '600', 
-            textAlign: 'center', 
-            marginBottom: '25px',
+          <h3 style={{
+            fontSize: '20px',
+            fontWeight: '600',
+            margin: '0 0 15px 0',
             color: '#1a365d'
           }}>
-            مواضيع ذات صلة
+            المزيد من المقالات قريباً
           </h3>
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-            gap: '15px' 
+          <p style={{
+            fontSize: '16px',
+            color: '#4a5568',
+            margin: '0 0 20px 0'
           }}>
-            <a href="/ai" style={{ 
-              padding: '15px', 
-              backgroundColor: 'white',
-              border: '2px solid #48bb78',
-              borderRadius: '10px',
-              textAlign: 'center',
-              textDecoration: 'none',
-              color: '#48bb78'
-            }}>
-              <strong>الذكاء الاصطناعي</strong>
-            </a>
-            <a href="/security" style={{ 
-              padding: '15px', 
-              backgroundColor: 'white',
-              border: '2px solid #ed8936',
-              borderRadius: '10px',
-              textAlign: 'center',
-              textDecoration: 'none',
-              color: '#ed8936'
-            }}>
-              <strong>ا��أمن السيبراني</strong>
-            </a>
-            <a href="/mobile" style={{ 
-              padding: '15px', 
-              backgroundColor: 'white',
-              border: '2px solid #9f7aea',
-              borderRadius: '10px',
-              textAlign: 'center',
-              textDecoration: 'none',
-              color: '#9f7aea'
-            }}>
-              <strong>تطبيقات الهاتف</strong>
-            </a>
-          </div>
-        </section>
+            نعمل باستمرار على إضافة مقالات جديدة ومفيدة في مجال البرمجة والتطوير
+          </p>
+          <a href="/" style={{
+            backgroundColor: '#667eea',
+            color: 'white',
+            padding: '12px 24px',
+            textDecoration: 'none',
+            borderRadius: '20px',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}>
+            تصفح جميع الأقسام
+          </a>
+        </div>
 
       </main>
 
