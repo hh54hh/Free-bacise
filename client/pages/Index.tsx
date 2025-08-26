@@ -862,6 +862,14 @@ export default function Index() {
             <div>
               <div
                 style={{
+                  fontSize: "24px",
+                  marginBottom: "8px",
+                }}
+              >
+                📅
+              </div>
+              <div
+                style={{
                   fontSize: "32px",
                   fontWeight: "800",
                   color: "#ed8936",
