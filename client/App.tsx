@@ -23,10 +23,6 @@ const App = () => (
       <Route path="/security" element={<Security />} />
       <Route path="/mobile" element={<Mobile />} />
       <Route path="/article/:id" element={<Article />} />
-      <Route
-        path="/free-basics-requirements"
-        element={<FreeBasicsRequirements />}
-      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
