@@ -15,7 +15,8 @@ export const articles: Article[] = [
   {
     id: "react-19-features",
     title: "React 19: الميزات الجديدة والتحسينات المنتظرة",
-    excerpt: "React 19 يقدم ميزات جديدة مثل Server Components المحسنة والـ Concurrent Features، مما يجعل تطوير التطبيقات أسرع وأكثر كفاءة.",
+    excerpt:
+      "React 19 يقدم ميزات جديدة مثل Server Components المحسنة والـ Concurrent Features، مما يجعل تطوير التطبيقات أسرع وأكثر كفاءة.",
     content: `
       <h1>React 19: ثورة في تطوير الواجهات الأمامية</h1>
       
@@ -50,14 +51,15 @@ export const articles: Article[] = [
     category: "programming",
     date: "2025-01-10",
     readTime: "5 دقائق",
-    tags: ["React", "JavaScript", "تطوير ويب"]
+    tags: ["React", "JavaScript", "تطوير ويب"],
   },
 
   // AI Articles
   {
     id: "chatgpt-5-release",
     title: "ChatGPT-5: الجيل الجديد من الذكاء الاصطناعي التحادثي",
-    excerpt: "OpenAI تكشف عن ChatGPT-5 مع قدرات محسنة بشكل كبير في فهم السياق، التفكير المنطقي، والتعامل مع المهام المعقدة.",
+    excerpt:
+      "OpenAI تكشف عن ChatGPT-5 مع قدرات محسنة بشكل كبير في فهم السياق، التفكير المنطقي، والتعامل مع المهام المعقدة.",
     content: `
       <h1>ChatGPT-5: ثورة جديدة في الذكاء الاصطناعي</h1>
       
@@ -91,54 +93,74 @@ export const articles: Article[] = [
     category: "ai",
     date: "2025-01-15",
     readTime: "6 دقائق",
-    tags: ["ChatGPT", "ذكاء اصطناعي", "OpenAI"]
-  }
+    tags: ["ChatGPT", "ذكاء اصطناعي", "OpenAI"],
+  },
 ];
 
 // Generate additional articles to reach 100+
 const generateMoreArticles = (): Article[] => {
   const moreArticles: Article[] = [];
-  
+
   // Programming articles
   const programmingTopics = [
-    "تحسينات TypeScript الجديدة", "Vue.js 3.5 والميزات المتقدمة", 
-    "أفضل ممارسات Node.js", "Next.js 15 والتطوير الحديث",
-    "Angular 18 وتحديثاته", "Docker في التطوير الحديث",
-    "GraphQL مقابل REST API", "تطوير PWA المتقدمة",
-    "WebAssembly في 2025", "Rust في تطوير الويب"
+    "تحسينات TypeScript الجديدة",
+    "Vue.js 3.5 والميزات المتقدمة",
+    "أفضل ممارسات Node.js",
+    "Next.js 15 والتطوير الحديث",
+    "Angular 18 وتحديثاته",
+    "Docker في التطوير الحديث",
+    "GraphQL مقابل REST API",
+    "تطوير PWA المتقدمة",
+    "WebAssembly في 2025",
+    "Rust في تطوير الويب",
   ];
 
   // AI articles
   const aiTopics = [
-    "الذكاء الاصطناعي في التعليم", "التعلم الآلي للمبتدئين", 
-    "الشبكات العصبية العميقة", "معالجة اللغات الطبيعية",
-    "رؤية الحاسوب الحديثة", "الذكاء الاصطناعي الطبي",
-    "أخلاقيات الذكاء الاصطناعي", "AutoML وأتمتة التعلم",
-    "الذكاء الاصطناعي المولد", "التحيز في خوارزميات الذكاء الاصطناعي"
+    "الذكاء الاصطناعي في التعليم",
+    "التعلم الآلي للمبتدئين",
+    "الشبكات العصبية العميقة",
+    "معالجة اللغات الطبيعية",
+    "رؤية الحاسوب الحديثة",
+    "الذكاء الاصطناعي الطبي",
+    "أخلاقيات الذكاء الاصطناعي",
+    "AutoML وأتمتة التعلم",
+    "الذكاء الاصطناعي المولد",
+    "التحيز في خوارزميات الذكاء الاصطناعي",
   ];
 
   // Security articles
   const securityTopics = [
-    "الأمان في السحابة", "حماية API من الهجمات",
-    "التصيد الإلكتروني الحديث", "أمان إنترنت الأشياء",
-    "الهندسة الاجتماعية", "تقنيات التشفير المتقدمة",
-    "أمان تطبيقات الويب", "مراقبة الشبكات الأمنية",
-    "إدارة الهوية والوصول", "أمان الأجهزة المحمولة"
+    "الأمان في السحابة",
+    "حماية API من الهجمات",
+    "التصيد الإلكتروني الحديث",
+    "أمان إنترنت الأشياء",
+    "الهندسة الاجتماعية",
+    "تقنيات التشفير المتقدمة",
+    "أمان تطبيقات الويب",
+    "مراقبة الشبكات الأمنية",
+    "إدارة الهوية والوصول",
+    "أمان الأجهزة المحمولة",
   ];
 
   // Mobile articles
   const mobileTopics = [
-    "React Native الجديد", "تطوير iOS بـ SwiftUI",
-    "Kotlin Multiplatform", "تصميم UX للتطبيقات",
-    "أداء التطبيقات المحمولة", "أمان التطبيقات المحمولة",
-    "متاجر التطبيقات 2025", "الواقع المعزز في التطبيقات",
-    "إشعارات التطبيقات الذكية", "اختبار التطبيقات المحمولة"
+    "React Native الجديد",
+    "تطوير iOS بـ SwiftUI",
+    "Kotlin Multiplatform",
+    "تصميم UX للتطبيقات",
+    "أداء التطبيقات المحمولة",
+    "أمان التطبيقات المحمولة",
+    "متاجر التطبيقات 2025",
+    "الواقع المعزز في التطبيقات",
+    "إشعارات التطبيقات الذكية",
+    "اختبار التطبيقات المحمولة",
   ];
 
   let idCounter = 100;
 
   // Generate programming articles
-  programmingTopics.forEach(topic => {
+  programmingTopics.forEach((topic) => {
     for (let i = 1; i <= 10; i++) {
       moreArticles.push({
         id: `prog-${idCounter++}`,
@@ -159,13 +181,13 @@ const generateMoreArticles = (): Article[] => {
         category: "programming",
         date: `2025-01-${(i % 15) + 1}`,
         readTime: `${(i % 8) + 3} دقائق`,
-        tags: [topic.split(' ')[0], "برمجة"]
+        tags: [topic.split(" ")[0], "برمجة"],
       });
     }
   });
 
   // Generate AI articles
-  aiTopics.forEach(topic => {
+  aiTopics.forEach((topic) => {
     for (let i = 1; i <= 10; i++) {
       moreArticles.push({
         id: `ai-${idCounter++}`,
@@ -184,13 +206,13 @@ const generateMoreArticles = (): Article[] => {
         category: "ai",
         date: `2025-01-${(i % 15) + 1}`,
         readTime: `${(i % 8) + 3} دقائق`,
-        tags: [topic.split(' ')[0], "ذكاء اصطناعي"]
+        tags: [topic.split(" ")[0], "ذكاء اصطناعي"],
       });
     }
   });
 
   // Generate security articles
-  securityTopics.forEach(topic => {
+  securityTopics.forEach((topic) => {
     for (let i = 1; i <= 10; i++) {
       moreArticles.push({
         id: `sec-${idCounter++}`,
@@ -209,13 +231,13 @@ const generateMoreArticles = (): Article[] => {
         category: "security",
         date: `2025-01-${(i % 15) + 1}`,
         readTime: `${(i % 8) + 3} دقائق`,
-        tags: [topic.split(' ')[0], "أمن سيبراني"]
+        tags: [topic.split(" ")[0], "أمن سيبراني"],
       });
     }
   });
 
   // Generate mobile articles
-  mobileTopics.forEach(topic => {
+  mobileTopics.forEach((topic) => {
     for (let i = 1; i <= 10; i++) {
       moreArticles.push({
         id: `mobile-${idCounter++}`,
@@ -234,7 +256,7 @@ const generateMoreArticles = (): Article[] => {
         category: "mobile",
         date: `2025-01-${(i % 15) + 1}`,
         readTime: `${(i % 8) + 3} دقائق`,
-        tags: [topic.split(' ')[0], "تطبيقات"]
+        tags: [topic.split(" ")[0], "تطبيقات"],
       });
     }
   });
@@ -247,13 +269,13 @@ export const allArticles = [...articles, ...generateMoreArticles()];
 
 // Helper functions
 export const getArticleById = (id: string): Article | undefined => {
-  return allArticles.find(article => article.id === id);
+  return allArticles.find((article) => article.id === id);
 };
 
 export const getArticlesByCategory = (category: string): Article[] => {
-  return allArticles.filter(article => article.category === category);
+  return allArticles.filter((article) => article.category === category);
 };
 
 export const getAllCategories = (): string[] => {
-  return Array.from(new Set(allArticles.map(article => article.category)));
+  return Array.from(new Set(allArticles.map((article) => article.category)));
 };
