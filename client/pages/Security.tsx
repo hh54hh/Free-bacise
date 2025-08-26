@@ -1,4 +1,8 @@
+import { getArticlesByCategory } from "../data/articles";
+
 export default function Security() {
+  const articles = getArticlesByCategory("security");
+
   return (
     <div style={{ 
       direction: 'rtl', 
@@ -60,7 +64,7 @@ export default function Security() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            الرئيسية
+            🏠 الرئيسية
           </a>
           <a href="/programming" style={{ 
             padding: '8px 16px', 
@@ -71,7 +75,7 @@ export default function Security() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            البرمجة
+            💻 البرمجة
           </a>
           <a href="/ai" style={{ 
             padding: '8px 16px', 
@@ -82,7 +86,7 @@ export default function Security() {
             fontSize: '14px',
             border: '1px solid #e2e8f0'
           }}>
-            الذكاء الاصطناعي
+            🤖 الذكاء الاصطناعي
           </a>
           <a href="/security" style={{ 
             padding: '8px 16px', 
@@ -93,7 +97,18 @@ export default function Security() {
             fontSize: '14px',
             fontWeight: '500'
           }}>
-            الأمن السيبراني
+            🔐 الأمن السيبراني
+          </a>
+          <a href="/mobile" style={{ 
+            padding: '8px 16px', 
+            backgroundColor: '#f7fafc', 
+            color: '#4a5568',
+            textDecoration: 'none',
+            borderRadius: '20px',
+            fontSize: '14px',
+            border: '1px solid #e2e8f0'
+          }}>
+            📱 تطبيقات الهاتف
           </a>
         </div>
       </nav>
@@ -105,18 +120,6 @@ export default function Security() {
         padding: '30px 15px'
       }}>
         
-        <h2 style={{
-          fontSize: '28px',
-          fontWeight: '700',
-          margin: '0 0 30px 0',
-          color: '#1a365d',
-          textAlign: 'center',
-          borderBottom: '3px solid #ed8936',
-          paddingBottom: '15px'
-        }}>
-          أحدث أخبار الأمن السيبراني
-        </h2>
-
         {/* Security Alert */}
         <div style={{ 
           backgroundColor: '#fed7d7',
@@ -142,234 +145,117 @@ export default function Security() {
           </p>
         </div>
 
-        {/* Articles */}
-        <div style={{ display: 'grid', gap: '25px' }}>
-          
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '22px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              هجمات الفدية الإلكترونية في 2025: التهديدات الجديدة
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#fff5f5',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block',
-              border: '1px solid #fed7d7'
-            }}>
-              14 يناير 2025 • عاجل
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: '0 0 15px 0',
-              color: '#4a5568'
-            }}>
-              تطور جديد في هجمات الفدية الإلكترونية يستهدف الشركات الصغيرة والمتوسطة. خبراء الأمن ينصحون بتطبيق بروتوكولات حماية محسنة.
-            </p>
-            <p style={{ 
-              fontSize: '15px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#718096'
-            }}>
-              التقرير يشمل أحدث طرق الحماية، النسخ الاحتياطية الآمنة، وكيفية التعامل مع محاولات الاختراق.
-            </p>
-          </article>
+        <h2 style={{
+          fontSize: '28px',
+          fontWeight: '700',
+          margin: '0 0 10px 0',
+          color: '#1a365d',
+          textAlign: 'center',
+          borderBottom: '3px solid #ed8936',
+          paddingBottom: '15px'
+        }}>
+          مقالات الأمن السيبراني
+        </h2>
 
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              الذكاء الاصطناعي في الأمن السيبراني: سلاح ذو حدين
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              12 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              كيف يستخدم الذكاء الاصطناعي لتعزيز الحماية السيبرانية، وفي نفس الوقت كيف يستغله المخترقون في هجماتهم المتطورة.
-            </p>
-          </article>
+        <p style={{
+          textAlign: 'center',
+          fontSize: '16px',
+          color: '#4a5568',
+          marginBottom: '30px'
+        }}>
+          {articles.length} مقال متاح في هذا القسم
+        </p>
 
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
+        {/* Articles Grid */}
+        <div style={{ display: 'grid', gap: '20px' }}>
+          {articles.map((article, index) => (
+            <article key={article.id} style={{ 
+              backgroundColor: 'white',
+              padding: '25px',
+              borderRadius: '10px',
+              boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
+              border: '1px solid #e8eaed'
             }}>
-              التصيد الإلكتروني: طرق جديدة وكيفية التعرف عليها
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              10 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              دليل شامل لأحدث طرق التصيد الإلكتروني، علامات التحذير، وكيفية حماية نفسك وشركتك من هذه الهجمات المتطورة.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              حماية البيانات الشخصية: قوانين GDPR الجديدة
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              8 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              التحديثات الجديدة على قوانين حماية البيانات الأوروبية وتأثيرها على الشركات والمستخدمين في المنطقة العربية.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              أمن إنترنت الأشياء (IoT): التحديات والحلول
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              6 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              مع انتشار الأجهزة الذكية، تزداد مخاطر الأمن السيبراني. تعرف على كيفية تأمين الأجهزة المنزلية الذكية وحماية شبكتك.
-            </p>
-          </article>
-
-          <article style={{ 
-            backgroundColor: 'white',
-            padding: '25px',
-            borderRadius: '10px',
-            boxShadow: '0 2px 15px rgba(0,0,0,0.06)',
-            border: '1px solid #e8eaed'
-          }}>
-            <h3 style={{ 
-              fontSize: '20px', 
-              fontWeight: '600', 
-              margin: '0 0 12px 0',
-              color: '#2d3748'
-            }}>
-              التصديق المتعدد العوامل (MFA): ضرورة وليس اختياراً
-            </h3>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#718096', 
-              marginBottom: '15px',
-              backgroundColor: '#f7fafc',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              display: 'inline-block'
-            }}>
-              4 يناير 2025
-            </div>
-            <p style={{ 
-              fontSize: '16px', 
-              lineHeight: '1.6', 
-              margin: 0,
-              color: '#4a5568'
-            }}>
-              لماذا أصبح التصديق المتعدد العوامل ضرورة أساسية في 2025، وكيفية تطبيقه بشكل صحيح لحماية حساباتك الشخصية والمهنية.
-            </p>
-          </article>
-
+              <a href={`/article/${article.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <h3 style={{ 
+                  fontSize: '20px', 
+                  fontWeight: '600', 
+                  margin: '0 0 12px 0',
+                  color: '#2d3748',
+                  lineHeight: '1.4'
+                }}>
+                  {article.title}
+                </h3>
+                <div style={{ 
+                  fontSize: '12px', 
+                  color: '#718096', 
+                  marginBottom: '15px',
+                  display: 'flex',
+                  gap: '15px',
+                  flexWrap: 'wrap'
+                }}>
+                  <span style={{
+                    backgroundColor: '#fffaf0',
+                    padding: '4px 10px',
+                    borderRadius: '12px',
+                    fontSize: '12px'
+                  }}>
+                    📅 {new Date(article.date).toLocaleDateString('ar-SA')}
+                  </span>
+                  <span style={{
+                    backgroundColor: '#fffaf0',
+                    padding: '4px 10px',
+                    borderRadius: '12px',
+                    fontSize: '12px'
+                  }}>
+                    ⏱️ {article.readTime}
+                  </span>
+                </div>
+                <p style={{ 
+                  fontSize: '15px', 
+                  lineHeight: '1.6', 
+                  margin: '0 0 15px 0',
+                  color: '#4a5568'
+                }}>
+                  {article.excerpt}
+                </p>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    gap: '8px',
+                    flexWrap: 'wrap'
+                  }}>
+                    {article.tags.slice(0, 3).map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        style={{
+                          backgroundColor: '#fff8e1',
+                          color: '#ed8936',
+                          padding: '4px 8px',
+                          borderRadius: '10px',
+                          fontSize: '12px',
+                          fontWeight: '500'
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span style={{
+                    color: '#ed8936',
+                    fontSize: '14px',
+                    fontWeight: '500'
+                  }}>
+                    اقرأ المزيد ←
+                  </span>
+                </div>
+              </a>
+            </article>
+          ))}
         </div>
 
         {/* Security Tips */}
@@ -427,7 +313,7 @@ export default function Security() {
                 fontSize: '16px',
                 fontWeight: '600'
               }}>
-                📧 احذر من الرسائل المشبوهة
+                📧 احذر من الرس��ئل المشبوهة
               </h4>
               <p style={{ 
                 margin: 0, 
