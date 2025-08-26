@@ -34,16 +34,42 @@ export default function Index() {
           boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
         }}
       >
-        <h1
+        <div
           style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "12px",
             margin: "0 0 8px 0",
-            fontSize: "32px",
-            fontWeight: "800",
-            textShadow: "0 2px 4px rgba(0,0,0,0.3)",
           }}
         >
-          تكنولوجيا 2025
-        </h1>
+          <span
+            style={{
+              fontSize: "28px",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+            }}
+          >
+            🚀
+          </span>
+          <h1
+            style={{
+              margin: "0",
+              fontSize: "32px",
+              fontWeight: "800",
+              textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+            }}
+          >
+            تكنولوجيا 2025
+          </h1>
+          <span
+            style={{
+              fontSize: "28px",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+            }}
+          >
+            💻
+          </span>
+        </div>
         <p
           style={{
             margin: 0,
@@ -370,7 +396,7 @@ export default function Index() {
               textAlign: "center",
             }}
           >
-            استكشف أقسامنا المتخصصة
+            استكشف أقسامنا المتخ��صة
           </h3>
           <div
             style={{
