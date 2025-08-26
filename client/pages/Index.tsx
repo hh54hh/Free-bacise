@@ -477,7 +477,7 @@ export default function Index() {
                 }}
               >
                 آخر التطورات في ا��ذكاء الاصطناعي، التعلم الآلي، والشبكات
-                ا��عصبية
+                العصبية
               </p>
               <div
                 style={{
@@ -834,7 +834,7 @@ export default function Index() {
                   color: "#4a5568",
                 }}
               >
-                تحديث أسبوعي
+                تحديث أسبوع��
               </div>
             </div>
             <div>
@@ -860,54 +860,6 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Free Basics Compliance */}
-        <section
-          style={{
-            backgroundColor: "#f0f8ff",
-            padding: "30px",
-            borderRadius: "12px",
-            border: "2px solid #667eea",
-            marginBottom: "40px",
-            textAlign: "center",
-          }}
-        >
-          <h3
-            style={{
-              fontSize: "22px",
-              fontWeight: "700",
-              margin: "0 0 15px 0",
-              color: "#1a365d",
-            }}
-          >
-            متوافق 100% مع Free Basics
-          </h3>
-          <p
-            style={{
-              fontSize: "16px",
-              lineHeight: "1.6",
-              margin: "0 0 20px 0",
-              color: "#4a5568",
-            }}
-          >
-            موقعنا مُحسَّن خصيصاً ليلبي جميع متطلبات Facebook Free Basics للحصول
-            على القبول الكامل
-          </p>
-          <a
-            href="/free-basics-requirements"
-            style={{
-              backgroundColor: "#667eea",
-              color: "white",
-              padding: "12px 24px",
-              textDecoration: "none",
-              borderRadius: "20px",
-              fontSize: "14px",
-              fontWeight: "500",
-              boxShadow: "0 4px 15px rgba(102,126,234,0.3)",
-            }}
-          >
-            اطلع على متطلبات القبول
-          </a>
-        </section>
       </main>
 
       {/* Footer */}
@@ -978,7 +930,7 @@ export default function Index() {
                 borderBottom: "2px solid transparent",
               }}
             >
-              سياسة الخصوصية
+              ��ياسة الخصوصية
             </a>
             <a
               href="/free-basics-requirements"
