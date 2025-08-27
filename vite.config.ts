@@ -6,7 +6,7 @@ import { createServer } from "./server";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, command }) => ({
   // Set base path for GitHub Pages deployment
-  base: mode === 'production' ? '/' : '/',
+  base: mode === "production" ? "/" : "/",
 
   server: {
     host: "::",
@@ -24,10 +24,12 @@ export default defineConfig(({ mode, command }) => ({
     rollupOptions: {
       output: {
         manualChunks: undefined,
-      }
-    }
+      },
+    },
   },
-  plugins: [react(), command === 'serve' ? expressPlugin() : null].filter(Boolean),
+  plugins: [react(), command === "serve" ? expressPlugin() : null].filter(
+    Boolean,
+  ),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./client"),

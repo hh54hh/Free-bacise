@@ -17,9 +17,9 @@ const RouteHandler = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const redirectPath = sessionStorage.getItem('redirectPath');
-    if (redirectPath && redirectPath !== '/') {
-      sessionStorage.removeItem('redirectPath');
+    const redirectPath = sessionStorage.getItem("redirectPath");
+    if (redirectPath && redirectPath !== "/") {
+      sessionStorage.removeItem("redirectPath");
       navigate(redirectPath, { replace: true });
     }
   }, [navigate]);
