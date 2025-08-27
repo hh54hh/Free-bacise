@@ -4,7 +4,10 @@ import path from "path";
 import { createServer } from "./server";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ mode, command }) => ({
+  // Set base path for GitHub Pages deployment
+  base: mode === "production" ? "/" : "/",
+
   server: {
     host: "::",
     port: 8080,
@@ -15,8 +18,18 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist/spa",
+    assetsDir: "assets",
+    sourcemap: false,
+    minify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
-  plugins: [react(), expressPlugin()],
+  plugins: [react(), command === "serve" ? expressPlugin() : null].filter(
+    Boolean,
+  ),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./client"),
