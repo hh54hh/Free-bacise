@@ -1,77 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>تكنولوجيا 2025 - أخبار التطوير والتكنولوجيا</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="موقع تكنولوجيا 2025 يقدم أحدث أخبار التطوير والتكنولوجيا باللغة العربية">
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            direction: rtl;
-            text-align: center;
-            background-color: #fafafa;
-            color: #2c3e50;
-        }
-        
-        .loading {
-            max-width: 500px;
-            margin: 100px auto;
-            padding: 40px 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
 
+    <!-- Meta tags for optimal performance -->
+    <meta
+      name="description"
+      content="موقع تكنولوجيا 2025 يقدم أحدث أخبار التطوير والتكنولوجيا باللغة العربية. تابع آخر التطورات في الذكاء الاصطناعي والبرمجة والأمن السيبراني."
+    />
+    <meta
+      name="keywords"
+      content="تكنولوجيا, برمجة, ذكاء اصطناعي, تطوير ويب, أمن سيبراني, عربي, 2025"
+    />
+    <meta name="author" content="تكنولوجيا 2025" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Language and region -->
+    <meta http-equiv="content-language" content="ar" />
+    <meta name="language" content="Arabic" />
+
+    <!-- Mobile optimization -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- Performance and caching -->
+    <meta http-equiv="cache-control" content="public, max-age=3600" />
+
+    <!-- Performance optimization -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+
+    <!-- Open Graph for social sharing -->
+    <meta
+      property="og:title"
+      content="تكنولوجيا 2025 - أخبار التطوير والتكنولوجيا"
+    />
+    <meta
+      property="og:description"
+      content="أحدث أخبار التكنولوجيا والتطوير باللغة العربية"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_SA" />
+
+    <!-- SPA redirect script for GitHub Pages -->
     <script>
-        // Store the current path and redirect to the main app
-        (function(l) {
-            if (l.search[1] === '/' ) {
-                var decoded = l.search.slice(1).split('&').map(function(s) { 
-                    return s.replace(/~and~/g, '&')
-                }).join('?');
-                window.history.replaceState(null, null,
-                    l.pathname.slice(0, -1) + decoded + l.hash
-                );
-            }
-        }(window.location));
+      // GitHub Pages SPA redirect
+      // Store current path and redirect to root with state
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
 
-        // Redirect to main app with the current path
-        var currentPath = window.location.pathname + window.location.search + window.location.hash;
-        var redirectPath = '/' + '?p=' + encodeURIComponent(currentPath);
-        
-        // Immediate redirect
-        window.location.replace(redirectPath);
+      // Store the path and redirect to index
+      sessionStorage.setItem('redirectPath', window.location.pathname + window.location.search + window.location.hash);
+      window.location.replace('/');
     </script>
-</head>
-<body>
-    <div class="loading">
-        <div class="spinner"></div>
-        <h2>جاري التحميل...</h2>
-        <p>يتم توجيهك إلى الصفحة المطلوبة</p>
-        
-        <noscript>
-            <p>يرجى تفعيل JavaScript أو <a href="/">العودة للصفحة الرئيسية</a></p>
-        </noscript>
-    </div>
-</body>
+  </head>
+
+  <body style="margin: 0; padding: 0; font-family: Arial, sans-serif">
+    <noscript>
+      <div style="text-align: center; padding: 50px; direction: rtl">
+        <h1>تكنولوجيا 2025</h1>
+        <p>هذا الموقع يعمل بدون JavaScript ومحسن للأداء السريع</p>
+        <p>أخبار التطوير والتكنولوجيا</p>
+      </div>
+    </noscript>
+
+    <div id="root"></div>
+
+    <script type="module" src="/client/App.tsx"></script>
+  </body>
 </html>
