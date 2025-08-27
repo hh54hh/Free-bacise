@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Free Basics friendly
+Crawl-delay: 1
+
+# Main pages
+Allow: /
+Allow: /about
+Allow: /privacy
+
+# Sitemap (if needed in future)
+# Sitemap: https://yourdomain.com/sitemap.xml
+
+# Block unnecessary paths
+Disallow: /api/
+Disallow: /_*
+Disallow: /*.json$
