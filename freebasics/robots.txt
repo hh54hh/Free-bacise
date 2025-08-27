@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Free Basics optimization
+# This site is optimized for Free Basics
+# Total size: <50KB, No JavaScript, Simple HTML/CSS
