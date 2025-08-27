@@ -22,7 +22,7 @@
     "format.fix": "prettier --write .",
     "typecheck": "tsc",
     "preview": "vite preview",
-    "predeploy": "npm run build:gh-pages",
+    "predeploy": "npm run build:gh-pages && echo 'komaharkia.com' > dist/spa/CNAME",
     "deploy": "gh-pages -d dist/spa"
   },
   "dependencies": {
@@ -79,7 +79,6 @@
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.12",
-    "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.539.0",
