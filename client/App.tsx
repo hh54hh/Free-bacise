@@ -1,6 +1,7 @@
 import "./global.css";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
@@ -11,9 +12,25 @@ import Mobile from "./pages/Mobile";
 import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
 
+// Component to handle GitHub Pages SPA redirects
+const RouteHandler = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const redirectPath = sessionStorage.getItem('redirectPath');
+    if (redirectPath && redirectPath !== '/') {
+      sessionStorage.removeItem('redirectPath');
+      navigate(redirectPath, { replace: true });
+    }
+  }, [navigate]);
+
+  return null;
+};
+
 // Ultra-lightweight app for optimal performance
 const App = () => (
   <BrowserRouter>
+    <RouteHandler />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/about" element={<About />} />
