@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تكنولوجيا 2025 - أخبار التطوير والتكنولوجيا</title>
+    
+    <!-- Free Basics Meta Tags -->
+    <meta name="description" content="موقع تكنولوجيا 2025 - أحدث أخبار التطوير والتكنولوجيا باللغة العربية">
+    <meta name="keywords" content="تكنولوجيا, برمجة, ذكاء اصطناعي, أمن سيبراني">
+    <meta name="author" content="تكنولوجيا 2025">
+    <meta name="robots" content="index,follow">
+    <meta name="language" content="Arabic">
+    <meta http-equiv="content-language" content="ar">
+    
+    <!-- Free Basics Optimization -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Minimal CSS - Under 3KB -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #fafafa;
+            color: #2c3e50;
+            line-height: 1.5;
+            direction: rtl;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: white;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .nav a {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 3px;
+            background: #f7fafc;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        
+        .nav a:hover, .nav a:focus {
+            background: #667eea;
+            color: white;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        .main-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+        
+        .main-content h2 {
+            color: #1a365d;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .main-content p {
+            margin-bottom: 15px;
+            color: #4a5568;
+        }
+        
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .category {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .category h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        
+        .category p {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 10px;
+        }
+        
+        .category a {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        
+        .articles {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-top: 15px;
+        }
+        
+        .articles h3 {
+            color: #1a365d;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .article-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        
+        .article-item h4 {
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .article-item p {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 5px;
+        }
+        
+        .article-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .footer p {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 24px; }
+            .nav a { padding: 6px 10px; font-size: 12px; }
+            .categories { grid-template-columns: 1fr; }
+            .container { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>💻 تكنولوجيا 2025 🚀</h1>
+        <p>آخر أخبار التطوير والتكنولوجيا</p>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="programming.html">💻 البرمجة</a>
+        <a href="ai.html">🤖 الذكاء الاصطناعي</a>
+        <a href="security.html">🔒 الأمن السيبراني</a>
+        <a href="mobile.html">📱 تطبيقات الهاتف</a>
+        <a href="about.html">ℹ️ حول الموقع</a>
+    </nav>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>مرحباً بك في عالم التكنولوجيا 2025</h2>
+            <p>اكتشف أكثر من 1402 مقال تقني متخصص في أحدث التطورات والأخبار في عالم التكنولوجيا والبرمجة.</p>
+            <p>موقعنا محسّن للسرعة والأداء ويعمل على جميع الأجهزة والشبكات البطيئة.</p>
+        </main>
+        
+        <!-- Categories -->
+        <section class="categories">
+            <div class="category">
+                <h3>🔥 البرمجة والتطوير</h3>
+                <p>أحدث التقنيات والأدوات</p>
+                <a href="programming.html">استكشف</a>
+            </div>
+            
+            <div class="category">
+                <h3>🤖 الذكاء الاصطناعي</h3>
+                <p>مستقبل التكنولوجيا</p>
+                <a href="ai.html">استكشف</a>
+            </div>
+            
+            <div class="category">
+                <h3>🔒 الأمن السيبراني</h3>
+                <p>حماية البيانات والأنظمة</p>
+                <a href="security.html">استكشف</a>
+            </div>
+            
+            <div class="category">
+                <h3>📱 تطبيقات الهاتف</h3>
+                <p>تطوير التطبيقات المحمولة</p>
+                <a href="mobile.html">استكشف</a>
+            </div>
+        </section>
+        
+        <!-- Recent Articles -->
+        <section class="articles">
+            <h3>🔥 أحدث المقالات</h3>
+            
+            <article class="article-item">
+                <h4>ChatGPT-5: الجيل الجديد من الذكاء الاصطناعي التحادثي</h4>
+                <p>اكتشف الميزات الجديدة في ChatGPT-5 وكيف ستغير مستقبل التفاعل مع الذكاء الاصطناعي</p>
+                <a href="article-chatgpt5.html">اقرأ المزيد</a>
+            </article>
+            
+            <article class="article-item">
+                <h4>تحسينات TypeScript الجديدة - الجزء 10</h4>
+                <p>آخر التحديثات والميزات في TypeScript لتحسين تجربة التطوير</p>
+                <a href="article-typescript.html">اقرأ المزيد</a>
+            </article>
+            
+            <article class="article-item">
+                <h4>Vue.js 3.5 والميزات المتقدمة</h4>
+                <p>استكشف الإمكانيات الجديدة في Vue.js 3.5 للتطوير المتقدم</p>
+                <a href="article-vuejs.html">اقرأ المزيد</a>
+            </article>
+            
+            <article class="article-item">
+                <h4>أفضل ممارسات Node.js للأداء</h4>
+                <p>تعلم كيفية تحسين أداء تطبيقات Node.js للإنتاج</p>
+                <a href="article-nodejs.html">اقرأ المزيد</a>
+            </article>
+            
+            <article class="article-item">
+                <h4>Next.js 15 والتطوير الحديث</h4>
+                <p>اكتشف الميزات الجديدة في Next.js 15 لتطوير التطبيقات الحديثة</p>
+                <a href="article-nextjs.html">اقرأ المزيد</a>
+            </article>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 تكنولوجيا 2025 - جميع الحقوق محفوظة</p>
+        <p>محسّن للأجهزة المحمولة والشبكات البطيئة</p>
+    </footer>
+</body>
+</html>
