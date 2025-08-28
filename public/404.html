@@ -45,10 +45,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ar_SA" />
 
-    <!-- SPA redirect script for GitHub Pages -->
+    <!-- GitHub Pages SPA redirect script -->
     <script>
       // GitHub Pages SPA redirect
-      // Store current path and redirect to root with state
       (function (l) {
         if (l.search[1] === "/") {
           var decoded = l.search
@@ -66,14 +65,14 @@
         }
       })(window.location);
 
-      // Store the path and redirect to index
-      sessionStorage.setItem(
-        "redirectPath",
+      // Store the path for React Router
+      var redirectPath =
         window.location.pathname +
-          window.location.search +
-          window.location.hash,
-      );
-      window.location.replace("/");
+        window.location.search +
+        window.location.hash;
+      if (redirectPath !== "/") {
+        sessionStorage.setItem("redirectPath", redirectPath);
+      }
     </script>
   </head>
 
@@ -88,6 +87,6 @@
 
     <div id="root"></div>
 
-    <script type="module" src="/client/App.tsx"></script>
+    <script type="module" src="/assets/index.js"></script>
   </body>
 </html>

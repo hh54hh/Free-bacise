@@ -2,7 +2,7 @@
   "name": "fusion-starter",
   "private": true,
   "type": "module",
-  "homepage": "https://komaharkia.com",
+  "homepage": "./",
   "pkg": {
     "assets": [
       "dist/spa/*"
