@@ -47,32 +47,25 @@
 
     <!-- GitHub Pages SPA redirect script -->
     <script>
-      // GitHub Pages SPA redirect
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(
-            null,
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash,
-          );
+      // Store the path for React Router and redirect to index.html
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
         }
-      })(window.location);
-
-      // Store the path for React Router
-      var redirectPath =
-        window.location.pathname +
-        window.location.search +
-        window.location.hash;
-      if (redirectPath !== "/") {
-        sessionStorage.setItem("redirectPath", redirectPath);
-      }
+      })();
+      
+      // GitHub Pages SPA handling
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
   </head>
 
@@ -80,13 +73,11 @@
     <noscript>
       <div style="text-align: center; padding: 50px; direction: rtl">
         <h1>تكنولوجيا 2025</h1>
-        <p>هذا الموقع يعمل بدون JavaScript ومحسن للأداء السريع</p>
-        <p>أخبار التطوير والتكنولوجيا</p>
+        <p>هذا الموقع يحتاج JavaScript للعمل بشكل صحيح</p>
+        <p>يرجى تفعيل JavaScript في متصفحك</p>
       </div>
     </noscript>
 
     <div id="root"></div>
-
-    <script type="module" src="/assets/index.js"></script>
   </body>
 </html>
