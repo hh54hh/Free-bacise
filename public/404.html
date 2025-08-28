@@ -48,21 +48,30 @@
     <!-- GitHub Pages SPA redirect script -->
     <script>
       // GitHub Pages SPA redirect
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash,
           );
         }
       })(window.location);
 
       // Store the path for React Router
-      var redirectPath = window.location.pathname + window.location.search + window.location.hash;
-      if (redirectPath !== '/') {
-        sessionStorage.setItem('redirectPath', redirectPath);
+      var redirectPath =
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
+      if (redirectPath !== "/") {
+        sessionStorage.setItem("redirectPath", redirectPath);
       }
     </script>
   </head>
