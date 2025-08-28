@@ -6,7 +6,7 @@
 ✅ **تم إصلاح**: `public/404.html` - معالجة توجيه SPA  
 ✅ **تم إصلاح**: `index.html` - معالجة GitHub Pages  
 ✅ **تم إصلاح**: `package.json` - إعدادات homepage  
-✅ **تم إصلاح**: `netlify.toml` - ق��اعد التوجيه  
+✅ **تم إصلاح**: `netlify.toml` - ق��اعد التوجيه
 
 ## خطوات التفعيل النهائية في GitHub:
 
@@ -19,44 +19,44 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       pages: write
       id-token: write
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build
-      run: npm run build:gh-pages
+      - name: Build
+        run: npm run build:gh-pages
 
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: 'dist/spa'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "dist/spa"
 
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
 
 ### 2. إنشاء ملف `.nojekyll`:
@@ -78,6 +78,7 @@ jobs:
 ## ✅ جاهز للنشر!
 
 بعد إنشاء الملفين أعلاه، المشروع سيعمل تلقائياً بدون شاشة بيضاء على:
+
 - GitHub Pages
 - الدومين المخصص komaharkia.com
 - أي استضافة أخرى
@@ -85,6 +86,7 @@ jobs:
 ## 🚀 بديل سريع: Netlify
 
 للنشر الفوري بدون إعداد GitHub:
+
 1. ادخل على netlify.com
 2. اسحب مجلد `dist/spa` بعد تشغيل `npm run build:gh-pages`
 3. الموقع سيعمل فوراً!
